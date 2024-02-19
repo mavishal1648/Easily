@@ -1,0 +1,137 @@
+<div class="d-flex" style="background-color: rgb(194, 192, 192); height: 100vh">
+    <div class="container" style="height: 80vh; width: 60vw; margin: auto">
+      <img src="/images/jobseeker_hub_cover.jpeg" alt="JobSeeker" />
+      <h1 class="viewHeading"><%=job.job_designation%> Opportunity at <%= job.company_name%></h1>
+      <div class="viewInner container">
+        <h3 style="font-family: Georgia, 'Times New Roman', Times, serif">
+          💼 <%= job.company_name%>
+        </h3>
+        <h6 style="font-family: cursive">Tech <%= job.job_designation%></h6>
+        <h5 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+          📍 <%= job.job_location%>
+        </h5>
+        <h5>⏳<b>Apply By:</b> <%= job.apply_by%></h5>
+        <h5>⏳<b>Number Of Openings:</b> <%= job.number_of_openings%></h5>
+        <%if(locals.user){%>
+          <a href="/applicants/<%=job.id%>" style="color: rgb(0, 0, 0);text-decoration: none;"><h5>👥<b>Applicants:</b><%= job.applicants.length%></h5></a>
+        <%}else{%>
+          <h5>👥<b>Applicants:</b><%= job.applicants.length%></h5>
+        <%}%>
+        <h5 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif">
+          🧑🏼‍💻 Skills: <%= job.skills_required%>
+        </h5>
+        <h5 style="color: rgb(240, 3, 3);">📨<b style="color: black;">Job Posted:</b><%= job.job_posted%></h5>
+          <%if(locals.user){%>
+            <a href="/job/update/<%=job.id%>" class="btn btn-primary" style="background-color:rgb(44, 43, 43); color: whitesmoke; border-color: whitesmoke;font-size:large;">update</a>
+            &nbsp;
+            <a href="/job/delete/<%=job.id%>" class="btn btn-primary" style="background-color:rgb(44, 43, 43); color: whitesmoke; border-color: whitesmoke;font-size:large;">Delete</a>
+            <!-- <button class="btn btn-primary" style="background-color:rgb(44, 43, 43); color: whitesmoke; border-color: whitesmoke;font-size:large;" onclick="deleteJob('<%= job.id %>')">Delete</button> -->
+          <%}else{%>
+            <button class=" btn-md btn btn-light px-5 my-2" data-bs-toggle="modal"
+            data-bs-target="#applyModal"><b>Apply Now</b></button>
+          <%}%>
+      </div>
+    </div>
+  </div>
+  <!-- Modal for applying job... -->
+  <div class="modal fade" id="applyModal"tabindex="-1"aria-labelledby="exampleModalLabel"aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-success" id="exampleModalLabel">
+          easily
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <!-- form start  -->
+        <div class="container p-3 mx-auto w-75 form-box my-5 rounded-md">
+          <h4 style="color: #181642" class="text-center mb-3">
+            apply in less than 1 minute
+          </h4>
+          <form
+            action="/apply/<%=job.id%>"
+            method="post"
+            enctype="multipart/form-data"
+          >
+            <div class="mb-3">
+              <div class="input-group">
+                <span class="input-group-text">Name</span>
+                <input
+                  required
+                  name="name"
+                  type="text"
+                  aria-label="First name"
+                  class="form-control"
+                  placeholder="enter your name"
+                />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="input-group">
+                <span class="input-group-text">Email</span>
+                <input
+                  required
+                  name="email"
+                  type="email"
+                  aria-label="email"
+                  class="form-control"
+                  placeholder="enter your email"
+                />
+              </div>
+            </div>
+
+            <div class="mb-3">
+              <div class="input-group">
+                <span class="input-group-text">Contact</span>
+                <input
+                  required
+                  name="contact"
+                  type="tel"
+                  aria-label="First name"
+                  class="form-control"
+                  placeholder="+91 ____ __ ____"
+                />
+              </div>
+            </div>
+
+            <div class="input-group mb-3">
+              <label class="input-group-text" for="inputGroupFile01"
+                >Resume</label
+              >
+              <input
+                name="resume"
+                type="file"
+                class="form-control"
+                id="inputGroupFile01"
+                required
+              />
+            </div>
+
+            <button
+              class="w-100 mb-3 mt-2 btn btn-md btn-success"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <!-- form end  -->
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+          Close
+        </button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+  

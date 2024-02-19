@@ -1,0 +1,171 @@
+<div class="card" style="width: 100%; height: 93vh; background-color:gainsboro">
+    <img src="/images/library-website.jpg" class="card-img-top" alt="jobSeeker" style="width: 100vw; height:60%;">
+    <div class="card-body">
+      <h1 class="card-title" style="text-align: center; font-size: 6rem; text-shadow: 4px 4px 8px rgb(137, 43, 139);">Easily</h1>
+      <h3 class="card-text" style="text-align: center;font-size: 3rem; color: rgb(29, 76, 179); ">A comprehensive platform for reliable Jobs & Internships</h3>
+      <div style="padding-left: 40%;">
+        <button data-bs-toggle="modal" data-bs-target="#staticBackdrop"
+        class="btn btn-lg lbtn mx-2" style="background-color:black;color: whitesmoke;font-size:large; text-shadow: 2px 2px 4px red; height: 17%;">Recruiter</button>
+        <a href="/jobs" class="btn btn-primary" style="background-color:black; color: whitesmoke; border-color: black;;
+        font-size:large; text-shadow: 2px 2px 4px red">Job Seeker</a>
+      </div>
+    </div>
+</div>
+<!-- Modal for registration! -->
+<div
+  class="modal fade"
+  id="staticBackdrop"
+  data-bs-backdrop="static"
+  data-bs-keyboard="false"
+  tabindex="-1"
+  aria-labelledby="staticBackdropLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h3 class="modal-title bold" id="staticBackdropLabel">
+          Experience easily!
+        </h3>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form action="/register" method="post" class="p-2">
+          <div class="mb-3">
+            <div class="input-group">
+              <span class="input-group-text">Name</span>
+              <input
+                required
+                name="name"
+                type="text"
+                aria-label="name"
+                class="form-control"
+                placeholder="enter your name"
+              />
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <div class="input-group">
+              <span class="input-group-text">Email</span>
+              <input
+                required
+                name="email"
+                type="email"
+                aria-label="email"
+                class="form-control"
+                placeholder="enter your email"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="input-group">
+              <span class="input-group-text">Password</span>
+              <input
+                required
+                name="password"
+                type="password"
+                aria-label="password"
+                class="form-control"
+                placeholder="enter your password"
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-dark btn-md mt-2 lbtn">Register</button>
+        </form>
+      </div>
+      <div class="modal-footer d-flex align-items-centre justify-content-between">
+        <div class="left d-flex flex-row align-items-centre justify-content-centre">
+          <!-- Button trigger login modal -->
+          <span>Already registered?</span>
+          <button
+            type="button"
+            class="btn btn-sm px-3 btn-outline-success"
+            data-bs-toggle="modal"
+            data-bs-target="#loginModal"
+          >
+            login
+          </button>
+        </div>
+        <div class="right">
+          <a href="#"><i class="text-primary bi bi-twitter"></i></a>
+          <a href="#"><i class="text-danger bi bi-instagram"></i></a>
+          <a href="#"><i class="text-info bi bi-facebook"></i></a>
+          <a href="#"><i class="text-success bi bi-whatsapp"></i></a>
+          <a href="#"><i class="text-primary bi bi-linkedin"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- Login -->
+<div
+  class="modal fade"
+  id="loginModal"
+  tabindex="-1"
+  aria-labelledby="loginModalLabel"
+  aria-hidden="true"
+>
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5 text-success" id="exampleModalLabel">
+          Experience easily!
+        </h1>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="modal-body">
+        <form action="/login" method="post" class="p-2">
+          <div class="mb-3">
+            <div class="input-group">
+              <span class="input-group-text">Email</span>
+              <input
+                required
+                name="email"
+                type="email"
+                aria-label="email"
+                class="form-control"
+                placeholder="enter your email"
+              />
+            </div>
+          </div>
+          <div class="mb-3">
+            <div class="input-group">
+              <span class="input-group-text">Password</span>
+              <input
+                required
+                name="password"
+                type="password"
+                aria-label="password"
+                class="form-control"
+                placeholder="enter your password"
+              />
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn-dark btn-md mt-2 lbtn">Login</button>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button
+          type="button"
+          class="btn btn-sm btn-danger"
+          data-bs-dismiss="modal"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,17 @@
+.BOX{
+    border: 2px dotted black;
+    margin: 4rem;
+    /* height: 40; */
+}
+.BOX a{
+    color: black;
+    font-size: 1.2rem;
+    text-shadow: 2px 2px 12px rgb(67, 65, 65);
+}
+#jobsHere{
+    font-size: 4rem;
+    color: rgb(3, 36, 51);
+    font-family: 'Times New Roman', Times, serif;
+    margin-left: 40%;
+    text-shadow: 2px 2px 4px red;
+}

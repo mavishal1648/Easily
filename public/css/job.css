@@ -1,0 +1,15 @@
+img{
+    width:100%;
+    height: 40%;
+}
+.viewHeading{
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    text-align: center;
+    text-shadow: 2px 2px 4px red;
+}
+.viewInner{
+    height: auto;
+    width: 80%;
+    margin-left: 5%;
+    margin-top: 2%;
+}
